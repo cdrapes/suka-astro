@@ -1,86 +1,74 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Banner from '../components/Banner.astro';
-import SubHeading from '../components/SubHeading.astro';
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import SubHeading from "../components/SubHeading.astro";
+import Suka from "../images/home/will-home.png";
 ---
 
-
 <Layout title="Welcome to Astro.">
-	<Banner text="Healing at the Heart of Wellness" page="home"/>
-	<main>
-		<SubHeading text="A dedicated therapeutic space where you can feel truly met in your journey for improved health and well-being."/>
+  <Banner text="Healing at the Heart of Wellness" page="home" />
+  <main>
+    <SubHeading
+      text="A dedicated therapeutic space where you can feel truly met in your journey for improved health and well-being."
+    />
 
-		<hr />
+    <hr />
 
-		        <!-- <div class="about-me">
-          <div class="about-me__content">
-            <div style={{ margin: "1em" }}>
-						<img>
-              <Image
-                src={suka}
-                title="Suka Homepage Image"
-                height={183}
-                width={183}
-                layout="responsive"
-                alt={"Suka Homepage Image"}
-                className={`${styles.aboutMeImage}`}
-                objectFit="responsive"
-              />
-            </div>
-            <div className={styles.aboutMeText}>
-              <p>
-              My name is William and I offer therapeutics based on my expertise in Herbal Medicine, Shamanic Practice and Reiki. The consultations I offer are rooted in principles of care, compassion, intuition, and purpose, alongside the wealth of experience I have developed over many years of sensitive therapeutic work. I have a heart-centered approach to living which breathes life into the medicine I offer. I often work with parts of a client that feel neglected or in disharmony; we will work to reclaim those parts, to nurture them,to grow them and to return a sense of integration and resolution, restoring vitality, physiological harmony and emotional wholeness.
-              </p>
-            </div>
-          </div>
-        </div> -->
+    <div class="about-me">
+      <div class="about-me__content">
+        <div class="about-me__image">
+          <img src={Suka}  alt="Picture of Suka" height="183" width="183" />
+        </div>
+        <div class="about-me__text">
+          <p>
+            My name is William and I offer therapeutics based on my expertise in
+            Herbal Medicine, Shamanic Practice and Reiki. The consultations I
+            offer are rooted in principles of care, compassion, intuition, and
+            purpose, alongside the wealth of experience I have developed over
+            many years of sensitive therapeutic work. I have a heart-centered
+            approach to living which breathes life into the medicine I offer. I
+            often work with parts of a client that feel neglected or in
+            disharmony; we will work to reclaim those parts, to nurture them,to
+            grow them and to return a sense of integration and resolution,
+            restoring vitality, physiological harmony and emotional wholeness.
+          </p>
+        </div>
+      </div>
+    </div>
 
-		<div></div>
-	</main>
+    <div></div>
+  </main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    /* max-width: 60ch; */
+	width: 80%;
+	max-width: 1000px;
+  }
+
+  .about-me {
+  }
+  .about-me__content {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    gap: 2em;
+    align-items: center;
+  }
+  .about-me__image {
+	margin: 1em;
+  }
+  .about-me__text {
+  }
+
+img {
+    margin: auto;
+	width: 100%;
+    height: 100%;
+    /* max-width: 300px;
+    max-height: 300px; */
+	border-radius: 24px;
+  }
 </style>
