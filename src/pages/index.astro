@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
 import SubHeading from "../components/SubHeading.astro";
 import Suka from "../images/home/will-home.png";
+import Herbal_Product from "../images/home/product-herbal.webp";
+import Reiki_Product from "../images/home/product-reiki.webp";
+import Shaman_Product from "../images/home/product-shaman.webp";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -14,10 +17,12 @@ import Suka from "../images/home/will-home.png";
 
     <hr />
 
+    <!-- about me -->
+
     <div class="about-me">
       <div class="about-me__content">
         <div class="about-me__image">
-          <img src={Suka}  alt="Picture of Suka" height="183" width="183" />
+          <img src={Suka} alt="Picture of Suka" height="183" width="183" />
         </div>
         <div class="about-me__text">
           <p>
@@ -36,7 +41,72 @@ import Suka from "../images/home/will-home.png";
       </div>
     </div>
 
-    <div></div>
+    <hr />
+
+    <!-- products -->
+
+    <!-- <div class="products"> -->
+    <ol class="products">
+      <li class="product">
+        <h3
+          class="product__title"
+          style={{ color: "#2f8857fc", fontSize: "18px" }}
+        >
+          Herbal Medicine
+        </h3>
+        <!-- TODO: add click event -->
+        <div class="product__image-container">
+          <a href="/herbal">
+            <img
+              src={Herbal_Product}
+              height={133}
+              width={192}
+              alt="Herbal Medicine product"
+              class="product__image"
+            />
+          </a>
+        </div>
+      </li>
+      <li class="product">
+        <h3
+          class="product-title"
+          style={{ color: "#2f8857fc", fontSize: "18px" }}
+        >
+          Reiki
+        </h3>
+        <div class="product__image-container">
+          <a href="/reiki">
+            <img
+              src={Reiki_Product}
+              height={133}
+              width={192}
+              alt={"Reiki product"}
+              class="product__image"
+            />
+          </a>
+        </div>
+      </li>
+      <li class="product">
+        <h3
+          class="product__title"
+          style={{ color: "#2f8857fc", fontSize: "18px" }}
+        >
+          Shamanic Healing
+        </h3>
+        <div class="product__image-container">
+          <a href="/reiki">
+            <img
+              src={Shaman_Product}
+              height={133}
+              width={192}
+              alt={"Shaman product"}
+              class="product__image"
+            />
+          </a>
+        </div>
+      </li>
+    </ol>
+    <!-- </div> -->
   </main>
 </Layout>
 
@@ -45,8 +115,8 @@ import Suka from "../images/home/will-home.png";
     margin: auto;
     padding: 1.5rem;
     /* max-width: 60ch; */
-	width: 80%;
-	max-width: 1000px;
+    width: 80%;
+    max-width: 1200px;
   }
 
   .about-me {
@@ -58,17 +128,54 @@ import Suka from "../images/home/will-home.png";
     align-items: center;
   }
   .about-me__image {
-	margin: 1em;
+    margin: 1em;
+    overflow: hidden;
+    border-radius: 24px;
   }
   .about-me__text {
   }
 
-img {
+  .about-me__image > img {
     margin: auto;
-	width: 100%;
+    width: 100%;
     height: 100%;
     /* max-width: 300px;
     max-height: 300px; */
-	border-radius: 24px;
+    border-radius: 24px;
+  }
+
+  /* product styles */
+
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    list-style-type: none;
+  }
+
+  .product {
+    border-radius: 24px;
+    max-height: auto;
+    max-width: 400px !important;
+    margin: auto !important;
+  }
+
+  .product__image-container {
+    overflow: hidden;
+    border-radius: 24px;
+	margin: 1em;
+    aspect-ratio: 13 / 9;
+  }
+
+  .product__image {
+    transition: transform 0.2s ease-out;
+    cursor: pointer;
+	height: 100%;
+    width: 100%;
+    /* border-radius: 24px; */
+  }
+
+  .product__image:hover {
+    transform: scale(1.025);
   }
 </style>
