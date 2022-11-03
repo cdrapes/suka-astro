@@ -1,9 +1,56 @@
 <nav class="navbar">
-    <ol>
+    <ul class="navbar__items">
         <li class="navbar_item"><a href="/">HOME</a></li>
         <li class="navbar_item"><a href="/herbal">HERBAL MEDICINE</a></li>
-        <li class="navbar_item">REIKI</li>
-        <li class="navbar_item">SHAMANIC HEALING</li>
-        <li class="navbar_item">COMMUNITY</li>
-    </ol>
+        <li class="navbar_item"><a href="/reiki">REIKI</li>
+        <li class="navbar_item"><a href="/shaman">SHAMANIC HEALING</li>
+        <li class="navbar_item"><a href="/community">COMMUNITY</li>
+    </ul>
 </nav>
+
+<style>
+nav {
+  margin: auto;
+  width: fit-content;
+  font-family: "Fahkwang", sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  padding: 0.5em;
+  /* color: #077D3A; */
+  color: #077D3A;
+
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #0e6633;
+  /* color: black; */
+  /* color: #fecb00; */
+}
+
+.active {
+  color: #fecb00 !important;
+  /* color: #2a2727 !important; */
+}
+
+/* mobile nav */
+
+.mobileNav {
+  display: flex;
+  justify-content: center;
+  /* margin: 1em auto 0; */
+  display: block;
+  margin: 0;
+}
+
+</style>
