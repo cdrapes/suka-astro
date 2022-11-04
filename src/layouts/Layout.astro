@@ -13,8 +13,10 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-    <link rel="preload" href="assets/banner-home.webp" as="image">
+    <!-- preload banner? -->
+    <link rel="preload" href="/fonts/Fahkwang-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Fahkwang-ExtraLightItalic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Fahkwang-Italic.woff2" as="font" type="font/woff2" crossorigin>
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -43,6 +45,7 @@ const { title } = Astro.props;
       }
       body {
         margin: 0px;
+        overflow-y: scroll;
       }
 
       /* fonts */
