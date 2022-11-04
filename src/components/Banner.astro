@@ -14,7 +14,6 @@ const { page, text } = Astro.props;
       role="img"
       aria-label={`[${page} banner]`}></span>
   </div>
-  <!-- <img class="banner" src="../src/images/home/banner-home.webp" /> -->
   <div class="banner__text">
     <h1>{text}</h1>
   </div>
@@ -81,6 +80,6 @@ const { page, text } = Astro.props;
 
   /* banners */
   .banner--home {
-    background-image: url("../src/images/home/banner-home.webp");
+    background-image: url('banners/banner-home.webp');
   }
 </style>
