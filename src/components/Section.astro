@@ -1,0 +1,40 @@
+---
+export interface Props {
+  direction: "horizontal" | "vertical";
+}
+
+const { direction } = Astro.props;
+---
+
+<div class="section">
+  <div
+    class={`section__content  ${
+      direction === "vertical" ? "section__content--vertical" : ""
+    }`}
+  >
+    <slot name="lhs" />
+    <slot name="rhs" />
+  </div>
+</div>
+
+<style>
+  .section {
+  }
+
+  .section__content {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+    gap: 2em;
+    align-items: center;
+  }
+
+  .section__content--vertical {
+    /* display: grid; */
+    grid-template-columns: none;
+    gap: 1em;
+    /* align-items: center; */
+  }
+
+  .section__text {
+  }
+</style>

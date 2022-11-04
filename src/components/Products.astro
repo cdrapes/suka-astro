@@ -1,0 +1,92 @@
+---
+import Herbal_Product from "../images/home/product-herbal.webp";
+import Reiki_Product from "../images/home/product-reiki.webp";
+import Shaman_Product from "../images/home/product-shaman.webp";
+---
+
+<ol class="products">
+  <li class="product">
+    <div class="product__image-container">
+      <a href="/herbal">
+        <img
+          src={Herbal_Product}
+          height={133}
+          width={192}
+          alt="Herbal Medicine product"
+          class="product__image"
+        />
+      </a>
+    </div>
+    <h3 class="product__title" style={{ color: "#2f8857fc", fontSize: "18px" }}>
+      Herbal Medicine
+    </h3>
+  </li>
+  <li class="product">
+    <div class="product__image-container">
+      <a href="/reiki">
+        <img
+          src={Reiki_Product}
+          height={133}
+          width={192}
+          alt={"Reiki product"}
+          class="product__image"
+        />
+      </a>
+    </div>
+    <h3 class="product-title" style={{ color: "#2f8857fc", fontSize: "18px" }}>
+      Reiki
+    </h3>
+  </li>
+  <li class="product">
+    <div class="product__image-container">
+      <a href="/reiki">
+        <img
+          src={Shaman_Product}
+          height={133}
+          width={192}
+          alt={"Shaman product"}
+          class="product__image"
+        />
+      </a>
+    </div>
+    <h3 class="product__title" style={{ color: "#2f8857fc", fontSize: "18px" }}>
+      Shamanic Healing
+    </h3>
+  </li>
+</ol>
+
+<style>
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    list-style-type: none;
+    margin: 1.5em;
+  }
+
+  .product {
+    border-radius: 24px;
+    max-height: auto;
+    max-width: 400px !important;
+    margin: auto !important;
+  }
+
+  .product__image-container {
+    overflow: hidden;
+    border-radius: 24px;
+    margin: 1em;
+    aspect-ratio: 13 / 9;
+  }
+
+  .product__image {
+    transition: transform 0.2s ease-out;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    /* border-radius: 24px; */
+  }
+
+  .product__image:hover {
+    transform: scale(1.025);
+  }
+</style>
