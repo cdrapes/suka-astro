@@ -2,25 +2,82 @@
 import Nav from "./Nav.astro";
 import Contact from "./Contact.astro";
 import Logo from "../images/logos/logo.png";
+import LeafLogo from "../images/logos/leaf-logo.png";
 ---
 
 <div class="header">
   <img class="suka-icon" src={Logo} alt="Brand logo" />
+  <svg
+    fill="#2f8857fc"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+    id="mobile-nav-icon"
+  >
+    <path
+      d="M256 0C114.618 0 0 114.618 0 256s114.618 256 256 256 256-114.618 256-256S397.382 0 256 0zm0 469.333c-117.818 0-213.333-95.515-213.333-213.333S138.182 42.667 256 42.667 469.333 138.182 469.333 256 373.818 469.333 256 469.333z"
+    ></path>
+    <path
+      d="M362.667 149.333H149.333c-11.782 0-21.333 9.551-21.333 21.333 0 11.782 9.551 21.333 21.333 21.333h213.333c11.782 0 21.333-9.551 21.333-21.333.001-11.781-9.55-21.333-21.332-21.333zM362.667 234.667H149.333C137.551 234.667 128 244.218 128 256s9.551 21.333 21.333 21.333h213.333c11.782 0 21.333-9.551 21.333-21.333s-9.55-21.333-21.332-21.333zM362.667 320H149.333C137.551 320 128 329.551 128 341.333c0 11.782 9.551 21.333 21.333 21.333h213.333c11.782 0 21.333-9.551 21.333-21.333C384 329.551 374.449 320 362.667 320z"
+    ></path>
+  </svg>
   <Nav />
-  <Contact/>
+  <img id="leaf-logo" src={LeafLogo} />
+  <Contact />
 </div>
 
 <style>
   .header {
-    display: flex;
-    height: 6em;
+    /* display: flex; */
+    /* height: 6em; */
     margin: auto;
     width: 80%;
-    justify-content: center;
+    /* justify-content: space-between; */
     max-width: 1000px;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 4fr 1fr;
+    display: grid;
   }
 
   .suka-icon {
-    height: 100%;
+    height: 6em;
+  }
+
+  #mobile-nav-icon,
+  #leaf-logo {
+    display: none;
+  }
+
+  #mobile-nav-icon {
+    margin: auto 0;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  #mobile-nav-icon:hover {
+    fill: var(--suka-yellow);
+  }
+
+  @media screen and (max-width: 767px) {
+    .header {
+      grid-auto-columns: 1fr 1fr 1fr;
+      width: 90%;
+    }
+    .suka-icon {
+      display: none;
+    }
+
+    #mobile-nav-icon,
+    #leaf-logo {
+      display: block;
+    }
+
+    .contact-icons > svg:hover {
+      fill: var(--suka-yellow);
+    }
+
+    #leaf-logo {
+      height: 4em;
+      margin: auto;
+    }
   }
 </style>

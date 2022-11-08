@@ -70,7 +70,7 @@
 <style>
   .contact-icons {
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     gap: 1em;
   }
@@ -84,5 +84,11 @@
 
   .contact-icons > svg:hover {
     fill: var(--suka-yellow);
+  }
+
+  @media screen and (max-width: 767px) {
+    .contact-icons > svg {
+      height: 1.5em;
+    }
   }
 </style>
