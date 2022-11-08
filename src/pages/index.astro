@@ -14,46 +14,40 @@ import SectionImage from "../components/SectionImage.astro";
 <Layout title="">
   <Banner text="Healing at the Heart of Wellness" page="home" />
   <main>
-
-    <div>
-      <h2>
-        Feel truly met in your journey for improved health and well-being.
-      </h2>
-      <div>
-
-      </div>
-      <Section direction={'vertical'}>
-        <SectionImage slot="lhs"  src={HerbalSuka} alt={"Image of Suka"} size={'large'} />
-        <p slot="rhs">My name is William and I offer therapeutics based on my expertise in Herbal Medicine, Shamanic Practice and Reiki. </p>
-        <p slot="rhs">
-          The consultations I offer are rooted in principles of <b>care</b>, <b>compassion</b>,
-          <b>intuition</b>, and <b>purpose</b>, alongside the wealth of experience I have
-          developed over many years of sensitive therapeutic work.
-        </p>
-      </Section>
-      
-      <p>
-        I have a heart-centered approach to living which breathes life into the
-        medicine I offer. I often work with parts of a client that feel
-        neglected or in disharmony; we will work to reclaim those parts, to
-        nurture them,to grow them and to return a sense of integration and
-        resolution, restoring vitality, physiological harmony and emotional
-        wholeness.
+    <h2>Feel truly met in your journey for improved health and well-being.</h2>
+    <Section direction={"vertical"}>
+      <SectionImage
+        slot="lhs"
+        src={HerbalSuka}
+        alt={"Image of Suka"}
+        size={"large"}
+      />
+      <p slot="rhs">
+        My name is William and I offer therapeutics based on my expertise in
+        Herbal Medicine, Shamanic Practice and Reiki.
       </p>
-    </div>
-
-    <!-- <hr /> -->
-
-    <!-- put into section comp -->
-
-
-    <!-- <hr /> -->
+      <p slot="rhs">
+        I have a heart-centered approach to living which breathes life into the
+        medicine I offer. I often work with parts of a client that feel neglected
+        or in disharmony; we will work to reclaim those parts, to nurture them, to
+        grow them and to return a sense of integration and resolution, restoring
+        vitality, physiological harmony and emotional wholeness.
+      </p>
+  
+    </Section>
 
     <Products />
 
-    <hr />
+    <p>
+      The consultations I offer are rooted in principles of <b>care</b>, <b
+        >compassion</b
+      >,
+      <b>intuition</b>, and <b>purpose</b>, alongside the wealth of experience I
+      have developed over many years of sensitive therapeutic work.
+    </p>
 
-    <!--  -->
+
+    <hr />
 
     <Feedback />
   </main>
@@ -68,12 +62,18 @@ import SectionImage from "../components/SectionImage.astro";
     max-width: 1200px;
   }
 
+  .will-images {
+    display: flex;
+    margin: auto;
+  }
+</style>
+
+<style is:global>
   h2 {
     color: var(--suka-green);
   }
 
-  .will-images {
-    display: flex;
-    margin: auto;
+  hr {
+    margin: 2em;
   }
 </style>
