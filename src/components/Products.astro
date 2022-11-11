@@ -2,13 +2,15 @@
 import Herbal_Product from "../images/home/product-herbal.webp";
 import Reiki_Product from "../images/home/product-reiki.webp";
 import Shaman_Product from "../images/home/product-shaman.webp";
+import { Image } from '@astrojs/image/components';
+
 ---
 
 <ol class="products">
   <li class="product">
     <div class="product__image-container">
       <a href="/herbal">
-        <img
+        <Image
           src={Herbal_Product}
           height={133}
           width={192}
@@ -24,7 +26,7 @@ import Shaman_Product from "../images/home/product-shaman.webp";
   <li class="product">
     <div class="product__image-container">
       <a href="/reiki">
-        <img
+        <Image
           src={Reiki_Product}
           height={133}
           width={192}
@@ -40,7 +42,7 @@ import Shaman_Product from "../images/home/product-shaman.webp";
   <li class="product">
     <div class="product__image-container">
       <a href="/reiki">
-        <img
+        <Image
           src={Shaman_Product}
           height={133}
           width={192}

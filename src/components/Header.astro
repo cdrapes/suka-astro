@@ -3,10 +3,11 @@ import Nav from "./Nav.astro";
 import Contact from "./Contact.astro";
 import Logo from "../images/logos/logo.png";
 import LeafLogo from "../images/logos/leaf-logo.png";
+import { Image } from '@astrojs/image/components';
 ---
 
 <div class="header">
-  <img class="suka-icon" src={Logo} alt="Brand logo" />
+  <Image class="suka-icon" src={Logo} alt="Brand logo" height={96} />
   <svg
     fill="#2f8857fc"
     xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +22,7 @@ import LeafLogo from "../images/logos/leaf-logo.png";
     ></path>
   </svg>
   <Nav />
-  <img id="leaf-logo" src={LeafLogo} />
+  <Image id="leaf-logo" src={LeafLogo} alt={"Suka Leaf Logo"} />
   <Contact />
 </div>
 

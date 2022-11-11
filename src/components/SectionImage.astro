@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 export interface SectionImage {
   src: string;
   alt: string;
@@ -11,7 +12,7 @@ const { src, alt, height, width, size } = Astro.props;
 ---
 
 <div class={`section__image-wrapper`}>
-  <img
+  <Image
     class={`section__image ${size ? `section__image--${size}` : ""}`}
     src={src}
     alt={alt}
