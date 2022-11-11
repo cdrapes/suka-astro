@@ -1,0 +1,21 @@
+<!-- ---
+// dup code
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\//g, "");
+---
+
+<div>
+  <ul class="navbar__items">
+    <a class={currentPath.length === 0 ? "active" : ""} href="/">HOME</a>
+    <a class={currentPath === "herbal" ? "active" : ""} href="/herbal"
+      >HERBAL MEDICINE</a
+    >
+    <a class={currentPath === "reiki" ? "active" : ""} href="/reiki">REIKI</a>
+    <a class={currentPath === "shaman" ? "active" : ""} href="/shaman"
+      >SHAMANIC HEALING</a
+    >
+    <a class={currentPath === "community" ? "active" : ""} href="/community"
+      >COMMUNITY</a
+    >
+  </ul>
+</div> -->
