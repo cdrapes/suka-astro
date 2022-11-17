@@ -2,8 +2,7 @@
 import Herbal_Product from "../images/home/product-herbal.webp";
 import Reiki_Product from "../images/home/product-reiki.webp";
 import Shaman_Product from "../images/home/product-shaman.webp";
-import { Image } from '@astrojs/image/components';
-
+import { Image } from "@astrojs/image/components";
 ---
 
 <ol class="products">
@@ -41,7 +40,7 @@ import { Image } from '@astrojs/image/components';
   </li>
   <li class="product">
     <div class="product__image-container">
-      <a href="/reiki">
+      <a href="/shaman">
         <Image
           src={Shaman_Product}
           height={133}
@@ -74,13 +73,13 @@ import { Image } from '@astrojs/image/components';
       max-width: 80%;
       margin: auto;
     }
+
+    .product {
+    }
   }
 
   .product {
     border-radius: 24px;
-    max-height: auto;
-    max-width: 400px !important;
-    margin: auto !important;
   }
 
   .product__image-container {
@@ -88,6 +87,8 @@ import { Image } from '@astrojs/image/components';
     border-radius: 24px;
     margin: 1em;
     aspect-ratio: 13 / 9;
+    max-width: 300px;
+    margin: auto;
   }
 
   .product__image {

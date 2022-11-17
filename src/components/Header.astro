@@ -4,13 +4,16 @@ import Contact from "./Contact.astro";
 import Logo from "../images/logos/logo.png";
 import LeafLogo from "../images/logos/leaf-logo.png";
 import { Image } from "@astrojs/image/components";
+import NavItems from "./NavItems.astro";
 // dup code
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\//g, "");
 ---
 
 <div class="header">
-  <Image class="suka-icon" src={Logo} alt="Brand logo" height={96} />
+  <a class="suka-icon-link" href="/">
+    <Image class="suka-icon" src={Logo} alt="Brand logo" height={96} />
+  </a>
   <svg
     fill="#2f8857fc"
     xmlns="http://www.w3.org/2000/svg"
@@ -25,30 +28,13 @@ const currentPath = pathname.replace(/\//g, "");
     ></path>
   </svg>
   <Nav />
-  <Image id="leaf-logo" src={LeafLogo} alt={"Suka Leaf Logo"} />
+  <a class="leaf-logo-tag" href="/">
+    <Image id="leaf-logo" src={LeafLogo} alt={"Suka Leaf Logo"} />
+  </a>
   <Contact />
   <div id="sidebar" class="hide">
     <ul class="sidebar__items">
-      <a
-        class={`currentPath.length === 0 ? "active" : "" sidebar-link`}
-        href="/">HOME</a
-      >
-      <a
-        class={`currentPath === "herbal" ? "active" : "" sidebar-link`}
-        href="/herbal">HERBAL MEDICINE</a
-      >
-      <a
-        class={`currentPath === "reiki" ? "active" : "" sidebar-link`}
-        href="/reiki">REIKI</a
-      >
-      <a
-        class={`currentPath === "shaman" ? "active" : "" sidebar-link`}
-        href="/shaman">SHAMANIC HEALING</a
-      >
-      <a
-        class={`currentPath === "community" ? "active" : "" sidebar-link`}
-        href="/community">COMMUNITY</a
-      >
+      <NavItems />
     </ul>
   </div>
 </div>
@@ -72,8 +58,9 @@ const currentPath = pathname.replace(/\//g, "");
     } else {
       document.addEventListener(
         "mousedown",
-        (e: Event & { target: Element }) => {
-          const hasClickedOnLink = e.target.classList.contains("sidebar-link");
+        (e: Event & { path: Element }) => {
+          const sidebarClass = 'sidebar__items';
+          const hasClickedOnLink = e.composedPath().some((el: Element) => el.classList?.contains(sidebarClass));
           if (!hasClickedOnLink) {
             hideSidebar();
           }
@@ -95,12 +82,31 @@ const currentPath = pathname.replace(/\//g, "");
     top: 0;
     left: 0;
     z-index: 5;
+    /* do anim */
+    transition: 0.3;
+    background: #f9f6f4;
+    width: 100%;
+    top: 4em;
+    animation: slidedown 0.6s ease-out;
   }
 
   .sidebar__items {
     display: flex;
     flex-direction: column;
+    padding: 0;
   }
+
+  @keyframes slidedown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
   .show {
     display: block !important;
@@ -116,6 +122,7 @@ const currentPath = pathname.replace(/\//g, "");
     grid-auto-flow: column;
     grid-auto-columns: 1fr 4fr 1fr;
     display: grid;
+    color: var(--suka-green);
   }
 
   .suka-icon {
@@ -123,7 +130,8 @@ const currentPath = pathname.replace(/\//g, "");
   }
 
   #mobile-nav-icon,
-  #leaf-logo {
+  /* #leaf-logo, */
+  .leaf-logo-tag {
     display: none;
   }
 
@@ -141,14 +149,17 @@ const currentPath = pathname.replace(/\//g, "");
     .header {
       grid-auto-columns: 1fr 1fr 1fr;
       width: 90%;
-      margin: 0.2em 1em;
+      margin: auto;
+      padding: 0.2em 0.5em;
     }
-    .suka-icon {
+    /* .suka-icon, */
+    .suka-icon-link {
       display: none;
     }
 
     #mobile-nav-icon,
-    #leaf-logo {
+    /* #leaf-logo, */
+    .leaf-logo-tag {
       display: block;
     }
 

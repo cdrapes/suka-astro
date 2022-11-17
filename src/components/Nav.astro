@@ -1,23 +1,11 @@
 ---
 import { Debug } from "astro/components";
-
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.replace(/\//g, "");
+import NavItems from "./NavItems.astro";
 ---
 
 <nav class="navbar">
   <ul class="navbar__items">
-    <a class={currentPath.length === 0 ? "active" : ""} href="/">HOME</a>
-    <a class={currentPath === "herbal" ? "active" : ""} href="/herbal"
-      >HERBAL MEDICINE</a
-    >
-    <a class={currentPath === "reiki" ? "active" : ""} href="/reiki">REIKI</a>
-    <a class={currentPath === "shaman" ? "active" : ""} href="/shaman"
-      >SHAMANIC HEALING</a
-    >
-    <a class={currentPath === "community" ? "active" : ""} href="/community"
-      >COMMUNITY</a
-    >
+    <NavItems />
   </ul>
   <!-- <Debug answer={currentPath} /> -->
 </nav>
@@ -41,33 +29,11 @@ const currentPath = pathname.replace(/\//g, "");
     display: flex;
   }
 
-  a {
-    padding: 0.5em;
-    /* color: #077D3A; */
-    color: #077d3a;
-
-    transition: 0.3s color;
-    text-decoration: none;
-  }
-
-  a:hover {
-    /* color: #0a4a25; */
-    color: #fecb00;
-  }
-
-  .active {
-    color: #fecb00;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    font-weight: bold;
-  }
-
   /* mobile nav */
 
   .mobileNav {
     display: flex;
     justify-content: center;
-    /* margin: 1em auto 0; */
     display: block;
     margin: 0;
   }
